@@ -1,0 +1,12 @@
+[Unit]
+Description=control daemon activation socket
+Before=tvsctld.service
+
+[Socket]
+ListenStream=/run/isel/tvsctld/request/tvsctld.socket
+SocketGroup=tvsgrp
+SocketMode=0660
+
+[Install]
+WantedBy=sockets.target
+
